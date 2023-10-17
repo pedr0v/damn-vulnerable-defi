@@ -45,6 +45,8 @@ describe('[Challenge] Unstoppable', function () {
 
     it('Execution', async function () {
         /** CODE YOUR SOLUTION HERE */
+        let tokenWithSigner = token.connect(player);
+        await token.transfer(vault.address, 1);
     });
 
     after(async function () {
